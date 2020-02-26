@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" manifest="offline.manifest.php">
+<html lang="en">
   <head>
     <title>Prematch Scouting Report</title>
-        <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/bootstrap.min.css" />  </head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
   <body>
-
     <div id="container">
-<!--       <div class="d-flex flex-row-reverse">
+      <!--       <div class="d-flex flex-row-reverse">
         <div class="p-2 font-weight-light font-italic">not logged in</div>
       </div> -->
       <div id="home-div">
@@ -51,7 +54,6 @@
             />
           </div>
 
-        
           <div class="form-group">
             <label class="form-label">Climb</label><br />
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -101,7 +103,7 @@
               </label>
             </div>
           </div>
-       
+
           <!--           <div class="form-group">
             <label for="checkbox" class="form-label">Switch Slide?</label><br />
             <div class="custom-control custom-checkbox">
@@ -152,21 +154,11 @@
             <label class="form-label">Color Wheel</label><br />
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-outline-primary">
-                <input
-                  type="radio"
-                  name="wheel_radio"
-                  id="wheel1"
-                  value="2"
-                />
+                <input type="radio" name="wheel_radio" id="wheel1" value="2" />
                 Yes
               </label>
               <label class="btn btn-outline-primary">
-                <input
-                  type="radio"
-                  name="wheel_radio"
-                  id="wheel2"
-                  value="1"
-                />
+                <input type="radio" name="wheel_radio" id="wheel2" value="1" />
                 No
               </label>
             </div>
@@ -218,7 +210,7 @@
               </label>
             </div>
           </div>
-           <div class="form-group">
+          <div class="form-group">
             <label class="form-label">Drive Train</label><br />
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-outline-primary">
@@ -282,9 +274,7 @@
             Create QR Code
           </button>
           <br />
-          <div id="qrcode" class="text-center w-100 d-flex">
-            
-          </div>
+          <div id="qrcode" class="text-center w-100 d-flex"></div>
           <br />
           <button
             id="insertButton"
@@ -308,24 +298,10 @@
         </a>
       </div>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/qrcode.min.js"></script>
-    <script src="/client.js"></script>
-    
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/qrcode.min.js"></script>
+    <script src="/js/client.js"></script>
   </body>
 </html>
