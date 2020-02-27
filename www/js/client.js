@@ -1,4 +1,28 @@
 /* globals $ FormData */
+var scoutNames = [
+  { name: "Danny" },
+  { name: "Sam" },
+  { name: "Karen" },
+  { name: "Clara" },
+  { name: "Jack Brandon" },
+  { name: "Andy" },
+  { name: "Sean" },
+  { name: "Trace" },
+  { name: "Addison" },
+  { name: "Jack Barnhart" },
+  { name: "Jackson" },
+  { name: "Michael" },
+  { name: "Leland" },
+  { name: "Donavan" },
+  { name: "Ben McIlvaine" },
+  { name: "Laila" },
+  { name: "Jacob" },
+  { name: "Nate" },
+  { name: "Paige" },
+  { name: "Ben Weatherill" },
+  { name: "Elliot" },
+  { name: "... GUEST ..."}
+];
 
 $(document).ready(() => {
   $("#the-section-with-questions")
@@ -8,39 +32,45 @@ $(document).ready(() => {
     .addClass("d-none")
     .removeClass("d-block");
 
-  $.ajax({
-    url: "/team/",
-    type: "GET",
-    dataType: "json",
-    success: data => {
-      console.log("You received some data!", data);
-      $.each(data, function(i, item) {
-        $("#numBox").append(
-          $("<option>", {
-            value: item.num,
-            text: item.num + ": " + item.name
-          })
-        );
-      });
-    }
-  });
+// START OFFLINE DATA ACCESS
+loadLocalScouts();  
+// END OFFLINE DATA ACCESS
+  
+// // START ONLINE DATA ACCESS
+//   $.ajax({
+//     url: "/team/",
+//     type: "GET",
+//     dataType: "json",
+//     success: data => {
+//       console.log("You received some data!", data);
+//       $.each(data, function(i, item) {
+//         $("#numBox").append(
+//           $("<option>", {
+//             value: item.num,
+//             text: item.num + ": " + item.name
+//           })
+//         );
+//       });
+//     }
+//   });
 
-  $.ajax({
-    url: "/user/",
-    type: "GET",
-    dataType: "json",
-    success: data => {
-      console.log("You received some data!", data);
-      $.each(data, function(i, item) {
-        $("#nameBox").append(
-          $("<option>", {
-            value: item.num,
-            text: item.name
-          })
-        );
-      });
-    }
-  });
+//   $.ajax({
+//     url: "/user/",
+//     type: "GET",
+//     dataType: "json",
+//     success: data => {
+//       console.log("You received some data!", data);
+//       $.each(data, function(i, item) {
+//         $("#nameBox").append(
+//           $("<option>", {
+//             value: item.num,
+//             text: item.name
+//           })
+//         );
+//       });
+//     }
+//   });
+// // END ONLINE DATA ACCESS
 
   $("#createQr").click(e => {
     e.preventDefault();
@@ -77,35 +107,35 @@ $(document).ready(() => {
       correctLevel: QRCode.CorrectLevel.H
     });
 
-//     // send data directly to server
-//     $.ajax({
-//       // all URLs are relative to http://localhost:3000/
-//       url: "/pit-report/",
-//       type: "POST", // <-- this is POST, not GET
-//       data: {
-//         num: $("#numBox").val(),
-//         weight: $("#weightBox").val(),
-//         trench: $('input[name="trench_radio"]:checked').val(),
-//         ball_ability: ballAbilityValue,
-//         shooter_distance: shooterDistanceValue,
-//         notes: $("#notesBox").val(),
-//         created_time: Date.now(),
-//         created_by: $("#nameBox").val(),
-//         drive_train: $('input[name="drive_train_radio"]:checked').val(),
-//         color_wheel: $('input[name="wheel_radio"]:checked').val()
-//       },
-//       success: data => {
-//         console.log(data.message);
-//         $("#the-section-with-questions")
-//           .addClass("d-none")
-//           .removeClass("d-block");
-//         $("#the-section-after-pressing-submit")
-//           .addClass("d-block")
-//           .removeClass("d-none");
-//         $("#after-title").html("You did it!");
-//         $("#after-status").html(data.message);
-//       }
-//     });
+    //     // send data directly to server
+    //     $.ajax({
+    //       // all URLs are relative to http://localhost:3000/
+    //       url: "/pit-report/",
+    //       type: "POST", // <-- this is POST, not GET
+    //       data: {
+    //         num: $("#numBox").val(),
+    //         weight: $("#weightBox").val(),
+    //         trench: $('input[name="trench_radio"]:checked').val(),
+    //         ball_ability: ballAbilityValue,
+    //         shooter_distance: shooterDistanceValue,
+    //         notes: $("#notesBox").val(),
+    //         created_time: Date.now(),
+    //         created_by: $("#nameBox").val(),
+    //         drive_train: $('input[name="drive_train_radio"]:checked').val(),
+    //         color_wheel: $('input[name="wheel_radio"]:checked').val()
+    //       },
+    //       success: data => {
+    //         console.log(data.message);
+    //         $("#the-section-with-questions")
+    //           .addClass("d-none")
+    //           .removeClass("d-block");
+    //         $("#the-section-after-pressing-submit")
+    //           .addClass("d-block")
+    //           .removeClass("d-none");
+    //         $("#after-title").html("You did it!");
+    //         $("#after-status").html(data.message);
+    //       }
+    //     });
   });
 
   // define a generic Ajax error handler:
@@ -114,3 +144,15 @@ $(document).ready(() => {
     $("#status").html("Error: unknown ajaxError!");
   });
 });
+
+function loadLocalScouts() {
+  //var data = JSON.parse(scoutNames);
+  $.each(scoutNames, function(i, item) {
+    $("#nameBox").append(
+      $("<option>", {
+        value: item.name,
+        text: item.name
+      })
+    );
+  });
+}
