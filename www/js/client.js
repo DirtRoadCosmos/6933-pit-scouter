@@ -153,7 +153,7 @@ var teamNames = [
   },
   { num: 7913, name: "'Bear'ly Functioning", insta_link: "" },
   { num: 8046, name: "Laker Bots", insta_link: "" },
-  { num: 99999, name: "... OTHER ... (mention in notes)", insta_link: "" }
+  { num: 99999, name: "... OTHER ...", insta_link: "" }
 ];
 
 $(document).ready(() => {
@@ -227,12 +227,19 @@ $(document).ready(() => {
         $("#weightBox").val() +
         "," +
         $('input[name="trench_radio"]:checked').val() +
+              "," +
         ballAbilityValue +
+              "," +
         shooterDistanceValue +
+              "," +
         $("#notesBox").val() +
+              "," +
         Date.now() +
+              "," +
         $("#nameBox").val() +
+              "," +
         $('input[name="drive_train_radio"]:checked').val() +
+              "," +
         $('input[name="wheel_radio"]:checked').val(),
       width: 256,
       height: 256,
