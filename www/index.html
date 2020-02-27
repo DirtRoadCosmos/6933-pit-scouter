@@ -25,6 +25,12 @@
           Pit Scouting Form
         </h1>
         <form>
+                    <div class="form-group">
+            <label for="nameBox" class="form-label">Your Name:</label>
+            <select id="nameBox" class="form-control">
+              <option selected disabled hidden>Choose one ...</option>
+            </select>
+          </div>
           <div class="form-group">
             <label for="numBox" class="form-label">Team</label>
             <select id="numBox" class="form-control">
@@ -259,12 +265,7 @@
             <textarea class="form-control" id="notesBox" rows="3"></textarea>
           </div>
 
-          <div class="form-group">
-            <label for="nameBox" class="form-label">Your Name:</label>
-            <select id="nameBox" class="form-control">
-              <option selected disabled hidden>Choose one ...</option>
-            </select>
-          </div>
+
 
           <button
             id="createQr"
@@ -274,18 +275,25 @@
             Create QR Code
           </button>
           <br />
-          <div id="qrcode" class="text-center w-100 d-flex"></div>
+          <div id="qrcode" class="mx-auto"></div>
           <br />
           <button
+            id="clearFormButton"
+            type="submit"
+            class="btn btn-outline-danger btn-block invisible mb-5"
+          >
+            Create Another Pit Report
+          </button> 
+<!--           <button
             id="insertButton"
             type="submit"
             class="btn btn-outline-danger btn-block invisible"
           >
             Submit Report
-          </button>
+          </button> -->
         </form>
       </div>
-      <div id="the-section-after-pressing-submit">
+<!--       <div id="the-section-after-pressing-submit">
         <h1 id="after-title" class="display-4 text-danger">
           Something went wrong...
         </h1>
@@ -296,7 +304,7 @@
         <a href="/view-scouting/" class="btn btn-outline-danger btn-block">
           View Reports
         </a>
-      </div>
+      </div> -->
     </div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>

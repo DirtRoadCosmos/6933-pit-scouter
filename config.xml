@@ -3,7 +3,7 @@
     id          = "org.archytas.pit-scouter"
     version     = "1.0.0" >
 
-  <name>Pit Scouter 6933</name>
+  <name>6933 Pit Scouter</name>
 
   <description>
       Pit souting data collector for FIRST Robotics team 6933.
@@ -13,4 +13,5 @@
       Archytas Scouting Squad
   </author>
 
+  <icon src="icon.png" />
 </widget>
