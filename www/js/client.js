@@ -219,7 +219,7 @@ $(document).ready(() => {
     $("#qrcode").html("");
     // generate qr code
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-      // scouting_type, teamNum, weight, trench, ball, shooter, notes, created_time, created_by, drive_train
+      // scouting_type, teamNum, weight, trench, ball, shooter, notes, created_time, created_by, drive_train, color_wheel, climb, switch
       text:
         "pit," +
         $("#numBox").val() +
@@ -240,7 +240,11 @@ $(document).ready(() => {
               "," +
         $('input[name="drive_train_radio"]:checked').val() +
               "," +
-        $('input[name="wheel_radio"]:checked').val(),
+        $('input[name="wheel_radio"]:checked').val() +
+      "," +
+        $('input[name="climb_radio"]:checked').val() +
+      "," +
+        $('input[name="switch_radio"]:checked').val(),      
       width: 256,
       height: 256,
       colorDark: "#000000",
